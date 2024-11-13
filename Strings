@@ -1,0 +1,259 @@
+String : it is class consisting sequence of characters
+
+//sorting a string
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string str="eadchidast";
+	char temp;
+	for(int i=0;i<str.length();i++){
+		for(int j=i+1;j<str.length();j++){
+			if(str[i]>str[j]){
+				temp=str[i];
+				str[i]=str[j];
+				str[j]=temp;
+			}
+		}
+	}
+	cout<<str;
+}
+
+//reverse a string
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string str;
+	char temp;
+	cout<<"original string ";
+	getline(cin,str);
+	int i=0,j=str.length()-1;
+	while(i<j){
+		temp=str[i];
+		str[i]=str[j];
+		str[j]=temp;
+		i++;
+		j--;
+	}
+	cout<<"reversed string "<<str<<endl;
+}
+
+//check if a string is a palindrome or not
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string str,str1;
+	char temp;
+	cout<<"original string ";
+	getline(cin,str);
+	str1=str;
+	int i=0,j=str.length()-1;
+	while(i<j){
+		temp=str[i];
+		str[i]=str[j];
+		str[j]=temp;
+		i++;
+		j--;
+	}
+	if(str==str1){
+		cout<<"given string is a palindrome";
+	}
+	else{
+		cout<<"given string is not a palindrome";
+	}
+}
+
+//anagram check
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string s1="sowrya";
+	string s2="aryows";
+	sort(s1.begin(),s1.end());
+	sort(s2.begin(),s2.end());
+	//Note : instead of using built in function sort we can also use sorting logic to sort the individual strings and then we can comapre
+	if(s1==s2){
+		cout<<"two strings are anagrams";
+	}
+	else{
+		cout<<"not anagrams";
+	}
+}
+
+//finding a string is a substring of another string
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string s1="my name is sowrya";
+	string s2="mss";
+	int strlength=s1.length();
+	int substrlength=s2.length();
+	int end=strlength-substrlength+1;
+	bool found =false;
+	for(int i=0;i<end;i++){
+		bool check_found=true;
+		for(int j=0;j<substrlength;j++){
+			if(s2[j]!=s1[i+j]){
+				check_found=false;
+				break;
+			}
+		}
+		if (check_found) {
+            cout << "Substring found at index " << i <<endl;
+            found=true;
+            break;
+        }
+	}
+	if(!found){
+		cout<<"substring not found";
+	}
+}
+
+//count vowels and consonents in a string
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string s1="sowrya sree";
+	int vowel_count=0;
+	int consonent_count=0;
+	for(int i=0;i<s1.length();i++){
+		char c=tolower(s1[i]);
+		if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'){
+			vowel_count++;
+		}
+		else{
+			consonent_count++;
+		}
+		
+	}
+	cout<<"number of vowels"<<vowel_count<<endl;
+	cout<<"number of vowels"<<consonent_count<<endl;
+}
+
+//count number of words
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	string s1="my name is sowrya. sree";
+	int count=1;
+	for(int i=0;i<s1.length();i++){
+		if(s1[i]==' '){
+			count++;
+		}
+	}
+	cout<<"number of words "<<count<<endl;
+}
+
+//reverse each word in a string
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string s="my name is sowrya sree";
+	int n = s.length();
+    int start = 0;
+    for (int i = 0; i <= n; i++) {
+        if (i == n || s[i] == ' ') {
+            reverse(s.begin() + start, s.begin() + i);
+            start = i + 1;
+        }
+    }
+    cout<<s<<endl;
+}
+//Note : to reverse the entite order of words and the each word use reverse(s.begin(),s.end())
+
+//remove all occurances of a character from the string
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string s="my name is sowrya sree";
+    char toremove='s';
+    string s1="";
+    for(int i=0;i<s.length();i++){
+    	if(s[i]!=toremove){
+    		s1+=s[i];
+		}
+	}
+	cout<<s1<<endl;
+}
+
+//find frequency of all characters in a string
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string s = "my name is sowrya sree";
+    int count[256] = {0}; 
+    for (int i = 0; i < s.length(); i++) {
+        count[s[i]]++; 
+    }
+    for (int i = 0; i < 256; i++) {
+        if (count[i] > 0) { 
+            cout << "Character: '" << (char)i << "' Frequency: " << count[i] << endl;
+        }
+    }
+}
+
+//finding first non-repeating character in a string
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string s = "abacd";
+    int count[256] = {0}; 
+    for (int i = 0; i < s.length(); i++) {
+        count[s[i]]++; 
+    }
+    for (int i = 0; i < s.length(); i++) {
+        if (count[s[i]] == 1) {
+            cout<< s[i];
+			break; 
+        }
+    }
+}
+
+//remove duplicates
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	string s="ssrrabacdc";
+	string result="";
+	bool seen[256]={false}; //here we are creating a boolean array where Each index in the array corresponds to a specific ASCII value of a character.
+	for (int i = 0; i < s.length(); i++) {
+        if (!seen[s[i]]) {  
+            result += s[i];  
+            seen[s[i]] = true;  
+        }
+    }
+
+    cout<< result;
+}
+
+//fing all substrings of a string
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	string s="ssrrabacdc";
+	int n = s.length();
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j <= n; j++) {
+            cout << s.substr(i, j - i) << endl;
+        }
+    }
+}
+
+//longest common prefix
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string arr[] = {"flower", "flow", "flight"};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    sort(arr, arr + n);
+    string prefix = "";
+    string first = arr[0];
+    string last = arr[n - 1];
+    for (int i = 0; i < min(first.length(), last.length()); i++) {
+        if (first[i] == last[i]) {
+            prefix += first[i];
+        } else {
+            break;
+        }
+    }
+    cout << "Longest common prefix: " << prefix << endl;
+}

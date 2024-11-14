@@ -23,6 +23,8 @@ int main(){
 		cout<<arr[i];
 	}
 }
+Application: Used to store a sequence of data elements, such as signal samples in digital signal processing (DSP) or channel data in network packets.
+
 
 //calculating sum of all elements in an array
 #include<bits/stdc++.h>
@@ -40,6 +42,7 @@ for(int i=0;i<n;i++){
 }
 cout<<sum;
 }
+Application: In DSP, summing samples over a period helps in calculating metrics like signal power and noise level.
 
 //finding element x in an array
 #include<bits/stdc++.h>
@@ -68,6 +71,7 @@ int main(){
 		cout<<"element not found";
 	}
 }
+Application: Used in routing tables and lookup tables to search for IP addresses or network nodes.
 
 //find the largest element
 #include<bits/stdc++.h>
@@ -88,6 +92,7 @@ int main(){
 	cout<<max;
 }
 //Note: exchange max with min and use condition if(arr[i]<min) to find min element in an array
+Application: Helps in selecting the strongest signal or determining the highest bandwidth available from a set of options.
 
 //find second largest
 #include<bits/stdc++.h>
@@ -133,6 +138,7 @@ int main(){
 	}
 	cout<<count;
 }
+Application: Used in threshold-based filtering to identify channels with signal strength above a certain threshold.
 
 //findind duplicates
 #include <bits/stdc++.h>
@@ -164,6 +170,8 @@ int main() {
         cout << "No duplicate elements found." << endl;
     }
 }
+Application: In telecommunications, detecting duplicate packets helps in identifying retransmissions and optimizing data flows.
+
 
 //copy contents of one array to another array in reverse order
 #include <bits/stdc++.h>
@@ -211,6 +219,7 @@ int main() {
     }
     cout << endl;
 }
+Application: Reversing data sequences is useful in certain encoding or decoding processes in signal processing.
 
 //rotate a given array by k steps
 #include <bits/stdc++.h>
@@ -240,6 +249,7 @@ int main() {
         cout << arr[i];
     }
 }
+Used in circular buffering, which is a common technique in telecommunications for managing data streams.
 
 //sorting of an array
 #include <bits/stdc++.h>
@@ -261,6 +271,7 @@ int main(){
     }
 	
 }
+Application: Sorting helps in organizing data for efficient retrieval, such as sorting frequencies in channel allocation.
 
 //max eleemnt till index i
 #include <bits/stdc++.h>
@@ -304,6 +315,7 @@ int main() {
     findCommonElements(arr1, arr2, arr3, n1, n2, n3);
     return 0;
 }
+Application: Used in identifying common frequency bands or channels across different network operators or devices.
 
 //Sort an Array of 0s, 1s, and 2s (Dutch National Flag Problem)
 #include <bits/stdc++.h>
@@ -332,6 +344,8 @@ int main() {
     for (int i = 0; i < n; i++) cout << arr[i] << " ";
     return 0;
 }
+Application: In modulation schemes, sorting and grouping signal types is essential for signal encoding and decoding.
+
 
 //move zeros to end
 #include <bits/stdc++.h>
@@ -356,6 +370,7 @@ int main() {
     for (int i = 0; i < n; i++) cout << arr[i] << " ";
     return 0;
 }
+Application: Removing inactive channels (represented as 0s) from an active list for efficient bandwidth management.
 
 //union and intersection
 #include <bits/stdc++.h>
@@ -411,6 +426,7 @@ int main() {
     findUnionAndIntersection(arr1, arr2, n1, n2);
     return 0;
 }
+Application: Union and intersection are useful in set operations for frequency and spectrum allocation, especially in managing multiple carriers.
 
 //missing number in a given range of elements
 #include <bits/stdc++.h>
@@ -429,6 +445,7 @@ int main() {
     cout << "Missing number is: " << findMissingNumber(arr, n) << endl;
     return 0;
 }
+Application: Missing values detection is essential for error correction in data transmission, such as in error-detecting codes.
 
 //printing all subarrays
 #include <bits/stdc++.h>
